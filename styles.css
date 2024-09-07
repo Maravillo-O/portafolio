@@ -43,8 +43,6 @@ img {
   padding: 5px;
 }
 
-
-
 body {
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
@@ -64,6 +62,8 @@ header {
   border-bottom: 1px solid rgba;
 
 
+
+
   .logo-holder {
     display: flex;
     padding: 10px;
@@ -80,7 +80,6 @@ header {
       align-items: center;
       justify-content: center;
       font-size: 32px;
-      background-color: var(--base-800);
       color: var(--base-100);
       height: 64px;
       width: 64px;
@@ -105,6 +104,8 @@ header {
       display: flex;
       list-style: none;
       gap: 5px;
+      position: sticky;
+      top: 0;
 
       /*The li elements that are in header/nav/ul will have the next trades*/
       li {
@@ -173,6 +174,7 @@ header {
 
 /*finaliza header*/
 
+
 .button {
   display: inline-block;
   padding: 10px 30px;
@@ -239,15 +241,24 @@ h1 {
   font-size: 48px;
   line-height: 1;
   margin-bottom: 10px;
+  margin-top: 10px;
 
-  small {
-    display: block;
-    font-weight: 100;
+  span {
+    font-weight: 50;
   }
 
   @media(max-width: 1024px) {
     font-size: 38px;
   }
+}
+
+.gumball {
+  display: block;
+  position: absolute;
+  height: 120px;
+  left: 590px;
+  top: 560px;
+
 }
 
 .hidden-text {
@@ -368,10 +379,9 @@ section {
 }
 
 
+
 .hero-container {
   display: flex;
-
-
 
   @media(max-width:1024px) {
     flex-direction: column;
@@ -491,9 +501,9 @@ section {
 
     .bento-item {
       padding: 30px;
-      background-color: var(--grey);
       border-radius: 15px;
       overflow: hidden;
+      /*position:relative;: Esto establece un contexto de posicionamiento para los elementos hijos.*/
       position: relative;
 
 
@@ -502,8 +512,10 @@ section {
         top: 0;
         left: 0;
         height: 100%;
+        /*object-fit: contain;: Mantiene la relación de aspecto de la imagen 
+        mientras ajusta su tamaño para que se ajuste completamente dentro del contenedor*/
         object-fit: contain;
-        transition: ease 3s all;
+        transition: ease 2s all;
 
       }
 
@@ -556,6 +568,7 @@ section {
         /*grid-line: grid-line-start/ grid-line-end*/
         grid-column: 2 span;
         grid-row: 1 span;
+        background-color: var(--blue-800);
       }
 
       @media(max-width: 768px) {
