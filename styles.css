@@ -1,0 +1,568 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*Aquí establecemos el valor de los colores para después referenciarlos de una manera más rápida*/
+:root {
+  --base: #555;
+  /*100 is the lowest (light) and 900 being one of the highest (darkest?)*/
+  /* #000: negro*/
+  --base-100: #f1f1f1;
+  --base-400: #555;
+  --base-800: #000;
+  --yellow: #ffda4b;
+  --yellow-100: #fffbe6;
+  --yellow-400: #ffda4b;
+  --yellow-800: #8b6f00;
+  --blue: #0a61ae;
+  --blue-100: #e2f8ff;
+  --blue-400: #61dafb;
+  --blue-800: #0a61ae;
+  --grey: #a5a4a4;
+}
+
+a {
+  text-decoration: none;
+  /*Mandando a llamar el color de :root*/
+  color: var(--blue);
+
+  /*&: used in nested selectors to refer an outer selectors
+  selectors:Are used to "find" or select the HTML elements that we want to style
+  */
+  /*&:hover {
+    text-decoration: underline;
+  }*/
+
+}
+
+img {
+  padding: 5px;
+}
+
+
+
+body {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 20px;
+  padding-bottom: 10000px;
+}
+
+/*Le decimos que el header va a contener un <a> (logo-holder) que a su vez contendra dos <divs> (logo, logo-text)*/
+header {
+  padding-top: 10px;
+  padding-bottom: 0px;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1440px;
+  margin: auto;
+  border-bottom: 1px solid rgba;
+
+
+  .logo-holder {
+    display: flex;
+    padding: 10px;
+    /*We align both .logo and .logo-text that are inside this <a> called .logo-holder*/
+    align-items: center;
+    font-weight: 800;
+    color: var(--base-800);
+
+    .logo {
+      display: flex;
+      /*align-items and justify content: to make the visible the "content" of logo, hay que tomar
+      en cuenta que decimos "content" por que realmente .logo es una letra "L" al cual simplemente
+      le agregamos background */
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      background-color: var(--base-800);
+      color: var(--base-100);
+      height: 64px;
+      width: 64px;
+      margin-right: 20px;
+      /*border-radius of 50% to make a circle*/
+      border-radius: 50%;
+
+    }
+
+    .logo-text {
+      /*We use flex:1 so uses all the space it has available*/
+      flex: 1;
+    }
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+
+    /*The ul elements that are in header/nav will have the next trades*/
+    ul {
+      display: flex;
+      list-style: none;
+      gap: 5px;
+
+      /*The li elements that are in header/nav/ul will have the next trades*/
+      li {
+        display: inline-block;
+
+        /*The a elements inside the header/nav/ul/li will have the nex trades*/
+        a {
+          display: inline-block;
+          /*Padding: top&bottom and left&right*/
+          padding: 10px 20px;
+          color: var(--base);
+
+
+
+          &:hover {
+            background-color: var(--base-100);
+            /*So it has a nice and lil curve around the edges*/
+            border-radius: 10px;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+
+    .mobile-toggle {
+      display: none;
+      color: var(--base-800);
+      padding: 10px;
+
+      @media (max-width: 768px) {
+        display: inline-block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
+    }
+  }
+
+  /*- Media Querys, the sintax for this is @media 
+  -normally for mobile is 768px */
+  @media (max-width: 768px) {
+    flex-direction: column;
+
+    nav {
+      margin-top: 10px;
+      width: 100%;
+      margin-bottom: 10px;
+
+      ul {
+        flex-direction: column;
+        text-align: right;
+        width: 100%;
+        display: none;
+
+        a {
+          width: 100%;
+        }
+
+        &.active {
+          display: flex;
+        }
+      }
+    }
+  }
+}
+
+/*finaliza header*/
+
+.button {
+  display: inline-block;
+  padding: 10px 30px;
+  background-color: var(--blue-800);
+  color: var(--base-100);
+  border-radius: 10px;
+  transition: ease 0.3s all;
+
+  /* Así ya no tienes que escribir en otro apartado .nombreboton:hover{}*/
+  &:hover {
+    text-decoration: none;
+    background-color: var(--base-800);
+  }
+
+  &.white {
+    background-color: white;
+    color: var(--base-800);
+
+    &:hover {
+      background-color: var(--blue-800);
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      padding: 15px;
+    }
+  }
+
+  &.black {
+    background-color: black;
+    color: white;
+
+
+    &:hover {
+      background-color: var(--grey);
+      color: white;
+    }
+
+    @media(max-width: 768px) {
+      padding: 15px;
+    }
+  }
+}
+
+.button-contact {
+  display: inline-block;
+  padding: 10px 30px;
+  background-color: var(--blue-800);
+  color: var(--base-100);
+  border-radius: 10px;
+  transition: ease 0.3s all;
+
+  @media(max-width: 768px) {
+    width: 125px;
+  }
+
+  &:hover {
+    text-decoration: none;
+    background-color: var(--base-800);
+  }
+}
+
+h1 {
+  font-size: 48px;
+  line-height: 1;
+  margin-bottom: 10px;
+
+  small {
+    display: block;
+    font-weight: 100;
+  }
+
+  @media(max-width: 1024px) {
+    font-size: 38px;
+  }
+}
+
+.hidden-text {
+  display: none;
+}
+
+/* SHOW MORE BTN STYLING!!!!!
+
+.show-more-btn {
+  background-color: rgb(149, 170, 197);
+  color: rgb(53, 49, 49);
+  border: none;
+  outline: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 15px 15px;
+
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+
+.text.showMore .hidden-text {
+  display: inline;
+}
+
+.text.showMore {
+  padding: 15px 15px;
+}
+*/
+
+h2 {
+  font-size: 64px;
+  line-height: 1;
+  margin-bottom: 10px;
+  text-align: center;
+  color: var(--base-800);
+  padding: 30px;
+
+  small {
+    display: block;
+    font-weight: 100;
+    font-size: 0.5em;
+    color: var(--base);
+  }
+
+  @media(max-width: 1024px) {
+    font-size: 48px;
+  }
+}
+
+h3 {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1;
+  margin-bottom: 20px;
+  color: var(--base-800);
+}
+
+.skills {
+  .column-holder {
+    background-color: var(--blue-400);
+    border-radius: 30px;
+    padding: 30px;
+    display: flex;
+
+    @media(max-width: 1024px) {
+      /*Esto permite que conforme la página se expanda se va a ir ajustando a */
+      flex-direction: column;
+    }
+
+    .left-column {
+      flex: 1;
+
+      ul {
+        list-style: none;
+        gap: 10px;
+        margin-right: 100px;
+        margin-bottom: 20px;
+
+        li {
+          /*display: inline-block means that they are stack horizontally instead of vertically*/
+          display: inline-block;
+          background-color: var(--blue-800);
+          padding: 10px 20px;
+          border-radius: 15px;
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+    .right-column {
+      flex: 1;
+
+      p {
+        margin-bottom: 20px;
+
+      }
+    }
+  }
+}
+
+
+section {
+  max-width: 1440px;
+  margin: auto;
+  gap: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+  @media(max-width:1440px) {
+    padding-left: 30px;
+    padding-right: 30px;
+
+  }
+}
+
+
+.hero-container {
+  display: flex;
+
+
+
+  @media(max-width:1024px) {
+    flex-direction: column;
+  }
+
+  .hero-blue {
+    flex: 1;
+    background-color: var(--blue-400);
+    border-radius: 30px;
+    padding: 0px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    span {
+      @media(max-width: 768px) {
+        display: none;
+      }
+    }
+
+    .call-to-action {
+      margin-top: 10px;
+      margin-bottom: 10px;
+
+      a {
+        margin-right: 10px;
+        margin-bottom: 10px;
+
+      }
+
+      .social-links {
+        a {
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+
+
+  .hero-yellow {
+    flex: 1;
+    background-color: var(--blue-100);
+    border-radius: 50px;
+    padding: 0px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    img {
+      margin-top: -60px;
+      max-width: 420px;
+
+    }
+  }
+}
+
+.logos {
+  background-color: var(--base-100);
+  border-radius: 30px;
+  padding: 30px 0px;
+  width: 550px;
+
+  @media (max-width: 1440px) {
+    border-radius: 0px;
+  }
+
+  .marquee {
+    width: 100vw;
+    max-width: 100%;
+    height: 80px;
+    /* overflow: se refiere a cuando algún elemento de una box se extiende de más
+    overflow: hidden; - nos permite esconder el contenido que tenga "overflow"*/
+    overflow: hidden;
+    /*Si algún elemento hijo es absoluto, el padre debe ser relativo*/
+    position: relative;
+
+    .track {
+      position: absolute;
+      /*White-space: nos dice como sera tratado el espacio en blanco de un texto.
+      white-space: nowrap; - crea un solo renglon y solo existen "line breaks" cuando existe un "<br>"*/
+      white-space: nowrap;
+      /*Le estamos diciendo al browser que las propiedades o elementos son probables a ser
+      will-change: transform; - Simplemente optimiza el rendimiento como evitar calculos inecesarios y promoción a una nueva capa de composición */
+      will-change: transform;
+      animation: marquee 15s linear infinite;
+      display: flex;
+      gap: 10px;
+    }
+  }
+}
+
+@keyframes marquee {
+
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.bento {
+  .bento-grid {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    height: 960px;
+
+    @media (max-width: 768px) {
+      height: auto;
+      gap: 10px;
+    }
+
+    .bento-item {
+      padding: 30px;
+      background-color: var(--grey);
+      border-radius: 15px;
+      overflow: hidden;
+      position: relative;
+
+
+
+      img {
+        top: 0;
+        left: 0;
+        height: 100%;
+        object-fit: contain;
+        transition: ease 3s all;
+
+      }
+
+      &:hover {
+
+        /*Zooming effect*/
+        img {
+          transform: scale(1.2);
+        }
+      }
+
+      &:nth-child(1) {
+        /*grid-line: grid-line-start/ grid-line-end*/
+        grid-column: 1span;
+        grid-row: 2 span;
+        background-color: var(--yellow-400);
+
+        @media(max-width: 768px) {
+          grid-column: 1span;
+          grid-row: 2 span;
+        }
+      }
+
+      &:nth-child(2) {
+        /*grid-line: grid-line-start/ grid-line-end*/
+        grid-column: 2 span;
+        grid-row: 1 span;
+        background-color: var(--blue-400);
+
+
+        @media(max-width: 768px) {
+          grid-column: 2 span;
+          grid-row: 1 span;
+        }
+      }
+
+      &:nth-child(3) {
+        /*grid-line: grid-line-start/ grid-line-end*/
+        grid-column: 1 span;
+        grid-row: 2 span;
+        background-color: rgb(244, 98, 98);
+
+        @media(max-width: 768px) {
+          grid-column: 2 span;
+          grid-row: 2 span;
+        }
+      }
+
+      &:nth-child(4) {
+        /*grid-line: grid-line-start/ grid-line-end*/
+        grid-column: 2 span;
+        grid-row: 1 span;
+      }
+
+      @media(max-width: 768px) {
+        grid-column: 2 span;
+        grid-row: 1 span;
+      }
+    }
+  }
+
+}

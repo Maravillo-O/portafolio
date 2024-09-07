@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+
+  <link rel="icon" type="image/jpg" href="./imgs/icono-luffy.jpg">
+</head>
+
+<body>
+  <header>
+    <a href="#" class="logo-holder">
+      <div class="logo">
+        <img src="" alt="">
+      </div>
+      <div class="logo-text">portfolio website</div>
+    </a>
+
+    <nav>
+      <ul id="menu">
+        <li>
+          <a href="#">Home</a>
+        </li>
+        <li>
+          <a href="#">About Me</a>
+        </li>
+        <li>
+          <a href="#">Workspace</a>
+        </li>
+        <li>
+          <a href="#">Skills</a>
+        </li>
+        <li>
+          <a href="#" class="button-contact">Contact</a>
+        </li>
+      </ul>
+      <a href="#" class="mobile-toggle" onclick="mobileMode();">
+        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+          width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h10" />
+        </svg>
+      </a>
+    </nav>
+
+  </header>
+
+  <main>
+    <section class="hero-container">
+
+      <!--HERO-BLUE-->
+      <div class="hero-blue">
+        <div>
+          <h1><small>Hola! soy:</small> Oscar Maravillo</h1>
+          <br>
+          <p class="text">
+            Un entusiasta del front-end en busca de mi primera oportunidad en el mundo del desarrollo web.
+            Con 26 años y un título en Ingeniería en Sistemas de la Universidad CUDEC,
+            donde he obtenido un profundo interés por la lógica de programación y el desarrollo web, especialmente
+            en el desarrollo front-end.
+          </p>
+          <br>
+          <!-- LABEL MOSTRAR MÁS -->
+          <!--<label class="show-more-btn"> Mostrar Más</label>-->
+        </div>
+
+        <!-- Div: botones  -->
+        <div class="call-to-action">
+          <!-- Podemos acceder a este boton en CSS con la sintaxis: &.black dentro de: .button -->
+          <a href="#" class="button black">
+            View Resume
+          </a>
+          <!-- Podemos acceder a este botón en CSS con la sintaxis: &.white dentro de: .button-->
+          <a href="#" class="button white">
+            Contact Me
+          </a>
+        </div>
+        <!--FIN del div: botones-->
+
+        <!-- Social Links -->
+        <div class="social-links">
+
+          <a href="#" class="github">
+            <img class="github" src="imgs/github.png" alt="No Image Found" width="64">
+          </a>
+
+          <a href="#">
+            <img class="linkedin" src="imgs/linkedIn.png" alt="No Image Found" width="64">
+          </a>
+
+        </div>
+        <!--FINAL SOCIAL-LINKS-->
+
+      </div>
+      </div>
+      <!--Fin hero-blue-->
+
+      <!--HERO-YELLOW-->
+      <div class="hero-yellow">
+        <!-- Mi foto -->
+        <img src="/imgs/griffith.png" alt="Mi-foto-not-found" width="100%">
+      </div>
+      <!--Fin hero-yellow-->
+
+    </section>
+    <!--FIN HERO-CONTAINER-->
+    <section class="logos">
+
+      <div class="marquee">
+
+        <div class="track">
+          <a href="#">
+            <img src=" /imgs/html.png" alt="html">
+          </a>
+          <a href="#">
+            <img src="/imgs/css.png" alt="css">
+          </a>
+          <a href="#">
+            <img src="/imgs/js.png" alt="js">
+          </a>
+          <a href="#">
+            <img src="/imgs/git.png" alt="git">
+          </a>
+          <a href="#">
+            <img src="/imgs/materialize.png" alt="materialize">
+          </a>
+          <a href="#">
+            <img src="/imgs/firebase.png" alt="firebase">
+          </a>
+
+          <!--Aqui volvemos a repetir los logos para que en la animación parezca infinito-->
+          <a href="#">
+            <img src="/imgs/html.png" alt="html">
+          </a>
+          <a href="#">
+            <img src="/imgs/css.png" alt="css">
+          </a>
+          <a href="#">
+            <img src="/imgs/js.png" alt="js">
+          </a>
+          <a href="#">
+            <img src="/imgs/git.png" alt="git">
+          </a>
+          <a href="#">
+            <img src="/imgs/materialize.png" alt="materialize">
+          </a>
+          <a href="#">
+            <img src="/imgs/firebase.png" alt="firebase">
+          </a>
+
+        </div>
+      </div>
+    </section>
+    <!--FIN LOGOS-->
+    <section class="skills">
+
+      <h2>
+        <small>About Me</small>
+        Skills
+      </h2>
+
+      <div class="column-holder">
+
+        <div class="left-column">
+          <h3>Front-End</h3>
+          <ul>
+            <li>Javascript</li>
+            <li>HTML</li>
+            <li>CSS</li>
+          </ul>
+          <h3>Otras tecnologías</h3>
+          <ul>
+            <li>Firebase</li>
+            <li>Materialize</li>
+            <li>Git</li>
+          </ul>
+        </div>
+
+        <div class="right-column">
+          <h3>Un poco más acerca de mi</h3>
+          <p>Soy una persona que le gusta aprender y dispuesta a enfrentar nuevos desafíos
+            hasta lograr dominarlos. Aunque mi
+            experiencia laboral no ha sido directamente en el desarrollo web, mi enfoque detallista y mi deseo constante
+            de aprender me han permitido adquirir habilidades técnicas de manera autodidacta.
+            <br> <br>
+            En mi tiempo libre, disfruto mantenerme activo en el gimnasio, leer filosofía y una que otra novela. Mis
+            gustos musicales abarcan desde el metal hasta la música clásica, lo que refleja mi personalidad siempre
+            abierta y mi aprecio por diferentes formas de arte.
+            Estoy emocionado por la posibilidad de aportar mis habilidades y pasión a un equipo donde pueda crecer tanto
+            como desarrollador como persona.
+          </p>
+        </div>
+
+      </div>
+    </section>
+    <!--FIN SKILLS SECTION-->
+    <!-- WORK-EXPERIENCE SECTION
+    <section class="work-experience container">
+      <h2>
+        <small>Recent</small>
+        Workexperience
+      </h2>
+      <div class="jobs">
+        <article>
+          <figure>
+            <div>
+              <img src="" alt=""/>
+            </div>
+          </figure>
+          <h3>Work-place1</h3>
+          <div>2000-2024</div>
+          <p>Description</p>
+        </article>
+      </div>
+
+    </section>-->
+    <!-- FIN WORK-EXPERIENCE SECTION -->
+
+    <section class="bento">
+      <h2>
+        <small>Previous</small>
+        Completed Projects
+      </h2>
+
+      <div class="bento-grid">
+        <a href="#" class="bento-item" id="restaurante">
+          <img src="/imgs/first-project.png" alt="img-project-not-found" width="100%">
+        </a>
+        <a href="#" class="bento-item 2" id="cine">
+          <img src="/imgs/second-project.png" alt="mg-project-not-found" width="100%">
+        </a>
+        <a href="#" class="bento-item 3" id="newbie">
+          <img src="/imgs/third-project.png" alt="mg-project-not-found" width="100%">
+        </a>
+        <a href="#" class="bento-item 4" id="password">
+          <img src="" alt="">
+        </a>
+      </div>
+    </section>
+    <!-- FIN PROJECTS SECTION-->
+  </main>
+  <!--FIN MAIN-->
+
+  <script src="./script.js"></script>
+</body>
+<!--FIN BODY-->
+
+</html>
